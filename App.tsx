@@ -359,8 +359,7 @@ async function fetchAllHits(hit) {
     if(hit.moto_name == "") return null;
     else return hit.moto_name;
   }); // Flatten the array of arrays
-  if(moto_names[0] == null) return [];
-  else{
+  
     const mergedMotoNames = [].concat(...moto_names); // Merge all arrays of moto_name into one array
     return mergedMotoNames;
   }
