@@ -355,11 +355,10 @@ async function fetchAllHits(hit) {
     distinct: false
   });
   const moto_names = hits.flatMap(hit => {
-    if(hit.moto_name == "") return null;
+    if(hit.moto_name == "") return [];
     else return hit.moto_name;
   }); // Flatten the array of arrays
   const mergedMotoNames = [].concat(...moto_names); // Merge all arrays of moto_name into one array
-  console.log()
   return mergedMotoNames;
 }
 
