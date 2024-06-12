@@ -550,3 +550,8 @@ div.moto-names-list>input[type="search"] {
   padding-left: 10px;
   width: 100%
 }
+
+title.ais-Highlight-highlighted {
+  display: block!important;
+  color:#d4000e;
+}
