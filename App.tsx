@@ -349,9 +349,10 @@ type HitType = AlgoliaHit<{
   rating: string;
 }>;
 
-async function fetchAllHits(hit) {
-  const { hits } = await index.search(hit.sku.toString(), {
-    attributesToRetrieve: ['moto_name'],
+async function fetchAllHits(item) {
+  const { hits } = await index.search(item.sku.toString(), {
+    filters: `sku:${item.sku}`,
+    attributesToRetrieve: ['moto_name','sku'],
     distinct: false
   });
   const moto_names = hits.flatMap(hit => {
