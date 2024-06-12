@@ -352,6 +352,7 @@ type HitType = AlgoliaHit<{
 async function fetchAllHits(item) {
   const { hits } = await index.search(item.sku.toString(), {
     filters: `sku:${item.sku}`,
+    hitsPerPage: 1000,
     attributesToRetrieve: ['moto_name','sku'],
     distinct: false
   });
