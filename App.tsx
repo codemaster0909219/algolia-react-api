@@ -393,11 +393,8 @@ function Hit({ hit }: { hit: HitType }) {
   );
 
 const filteredMotoNames = motoNames.filter(motoName => {
-    if(motoName != null){
+    if(motoName != null && motoName != ""){
       return motoName.toLowerCase().includes(searchQuery.toLowerCase())
-    }
-    else{
-      return [];
     }
   });
 
