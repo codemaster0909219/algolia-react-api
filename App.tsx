@@ -1,4 +1,4 @@
-import algoliasearch from 'algoliasearch/lite';
+﻿import algoliasearch from 'algoliasearch/lite';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Configure,
@@ -392,7 +392,14 @@ function Hit({ hit }: { hit: HitType }) {
     <button onClick={toggleMotoList} className="os-result_product-fit">Suitable for...</button>
   );
 
-  const filteredMotoNames = motoNames.filter(motoName => motoName.toLowerCase().includes(searchQuery.toLowerCase()));
+const filteredMotoNames = motoNames.filter(motoName => {
+    if(motoName != null){
+      return motoName.toLowerCase().includes(searchQuery.toLowerCase())
+    }
+    else{
+      return [];
+    }
+  });
 
   return (
     <article>
